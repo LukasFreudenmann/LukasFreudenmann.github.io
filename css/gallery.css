@@ -1,18 +1,22 @@
-div.gallery {
-    margin: 2px;
-    float: left;
-    width: 80%;
+/* First the Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 5px;
+    justify-items: center;
+    margin: 10px;
+    padding: 0;
+    align-items: center;
 }
 
-div.gallery:hover {
-}
-
-div.gallery img {
-    width: 100%;
+/* The Images */
+.gallery-img {
+    max-width: 100%;
     height: auto;
+    object-fit: cover;
+    transition: opacity 0.25s ease-in-out;
 }
 
-div.desc {
-    padding: 15px;
-    text-align: center;
+.gallery-img:hover {
+    opacity: .7;
 }
