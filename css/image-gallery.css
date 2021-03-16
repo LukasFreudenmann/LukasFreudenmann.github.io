@@ -2,6 +2,11 @@ body {
     background: rgb(240, 241, 245);
 }
 
+.gallery-container {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
 .con {
     position: relative;
     padding: 5px;
