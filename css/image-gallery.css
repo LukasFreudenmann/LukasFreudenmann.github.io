@@ -1,5 +1,10 @@
+body {
+    background: rgb(240, 241, 245);
+}
+
 .con {
     position: relative;
+    padding: 5px;
 }
 
 .image {
