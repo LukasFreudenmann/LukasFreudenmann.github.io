@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    <title>Karlsruhe Fotospots</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/hero-banner.css">
+    <link rel="stylesheet" href="css/image-gallery.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
+
+
+</head>
+<body onload="init()">
+<script src="js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="js/location.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" crossorigin=""></script>
+
+
+<div class="hero-image">
+    <div class="hero-text">
+        <h5>Erkunde Fotospots in</h5>
+        <h1 id="header-text">KARLSRUHE</h1>
+    </div>
+    <div class="header-buttons">
+        <table style="align-self: center">
+            <tr>
+                <td>
+                    <a href="main.html">
+
+                        <button class="header-button"><i class="fas fa-street-view"></i>SPOTS</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="map.html">
+                        <button class="header-button"><i class="fas fa-map-marked-alt"></i>    MAPS</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="container gallery-container">
+    <div id="locationWarning"></div>
+
+    <div id="map"></div>
+</div>
+<script>
+    var map = L.map('map')
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(onPos, showPosError);
+    }
+
+    addMarkers()
+
+    function onPos(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        map.setView(new L.LatLng(latitude, longitude), 12);
+        addMarkers()
+    }
+
+    function showPosError(error) {
+        map.setView([49.010411077243255, 8.404078895912157], 13);
+        addMarkers()
+    }
+
+    function addMarkers() {
+        var distances = ["MarktplatzDist", "BotatischerGartenDist", "RheinhafenDist", "LernzentrumDist", "ZKMDist",
+            "RheinbrückeDist", "SchlossGottesaueDist", "SchlossDist", "TurmbergDist"];
+        var positions = [
+            49.00927401131935, 8.403893297438733,
+            49.013004654388766, 8.39966357828218,
+            49.01523252064477, 8.344084445965663,
+            49.01260189828333, 8.412250082247098,
+            49.00100675877579, 8.384558169451196,
+            49.036919899265406, 8.303444341143475,
+            49.00457310877466, 8.426524603074725,
+            49.0131014133627, 8.4043295523524,
+            48.996914024725626, 8.48536739549212
+        ];
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        for (let i = 0; i < distances.length; i++) {
+            L.marker([positions[i * 2], positions[i * 2 + 1]]).addTo(map)
+        }
+    }
+
+</script>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-right align-self-end">©2021 Karlsruhe Fotospots - Lukas Freudenmann</div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
