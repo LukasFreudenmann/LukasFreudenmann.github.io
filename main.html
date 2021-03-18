@@ -12,9 +12,10 @@
 
 
 </head>
-<body>
+<body onload="init()">
 <script src="js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="js/location.js"></script>
 
 <div class="hero-image">
     <div class="hero-text">
@@ -41,6 +42,7 @@
 </div>
 
 <div class="container gallery-container">
+    <div id="locationWarning"></div>
     <div>
         <h4>14 PHOTOS in 9 SPOTS</h4>
     </div>
@@ -50,7 +52,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Marktplatz</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="MarktplatzDist"></div>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Botanischer Garten</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="BotatischerGartenDist"></div>
                 </div>
             </div>
         </div>
@@ -68,7 +70,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Rheinhafen</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="RheinhafenDist"></div>
                 </div>
             </div>
         </div>
@@ -77,7 +79,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Lernzentrum</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="LernzentrumDist"></div>
                 </div>
             </div>
         </div>
@@ -86,7 +88,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">ZKM</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="ZKMDist"></div>
                 </div>
             </div>
         </div>
@@ -95,7 +97,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Rheinbrücke</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="RheinbrückeDist"></div>
                 </div>
             </div>
         </div>
@@ -104,7 +106,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Schloss Gottesaue</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="SchlossGottesaueDist"></div>
                 </div>
             </div>
         </div>
@@ -113,7 +115,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Schloss</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="SchlossDist"></div>
                 </div>
             </div>
         </div>
@@ -122,7 +124,7 @@
             <div class="image-hover">
                 <div class="text-row">
                     <div class="text">Turmberg</div>
-                    <div class="text2">&#x1F4CD; Karlsruhe</div>
+                    <div class="text2" id="TurmbergDist"></div>
                 </div>
             </div>
         </div>
