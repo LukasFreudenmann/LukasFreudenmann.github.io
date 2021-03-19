@@ -37,7 +37,7 @@
                 </td>
                 <td>
                     <a href="map.html">
-                        <button class="header-button"><i class="fas fa-map-marked-alt"></i>    MAPS</button>
+                        <button class="header-button"><i class="fas fa-map-marked-alt"></i> MAPS</button>
                     </a>
                 </td>
             </tr>
@@ -90,7 +90,7 @@
         }).addTo(map);
 
         for (let i = 0; i < distances.length; i++) {
-            L.marker([positions[i * 2], positions[i * 2 + 1]]).addTo(map)
+            L.marker([positions[i * 2], positions[i * 2 + 1]]).addTo(map).bindTooltip(distances[i].replace("Dist", ""))
         }
     }
 
