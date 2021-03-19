@@ -24,30 +24,25 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(calcDistances, showPosError);
     } else {
-        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-danger alert-dismissible fade show">' +
-            '<strong>Warning!</strong> Geolocation is not supported by this browser.' +
-            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-            '</div>'
-
+        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade in"> ' +
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> ' +
+            '<strong> Warning! </strong>Geolocation is not supported by this browser.</div>'
     }
 }
 
 function showPosError(error) {
     if (error.code == error.PERMISSION_DENIED) {
-        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade show">' +
-            '<strong>Warning!</strong> In order to see the distances, the location must be released.' +
-            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-            '</div>'
+        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade in"> ' +
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> ' +
+            '<strong> Warning! </strong>In order to see the distances, the location must be released.</div>'
     } else if (error.code == error.TIMEOUT) {
-        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade show">' +
-            '<strong>Warning!</strong> Geolocation Timeout.' +
-            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-            '</div>'
+        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade in"> ' +
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> ' +
+            '<strong> Warning! </strong> Geolocation Timeout.</div>'
     } else if (error.code == error.UNKNOWN_ERROR) {
-        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade show">' +
-            '<strong>Warning!</strong> UNKNOWN_ERROR.' +
-            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-            '</div>'
+        document.getElementById("locationWarning").innerHTML = '<div class="alert alert-warning alert-dismissible fade in"> ' +
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> ' +
+            '<strong> Warning! </strong>UNKNOWN_ERROR.</div>'
     }
 }
 
