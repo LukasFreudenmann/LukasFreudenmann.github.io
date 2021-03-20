@@ -1,0 +1,35 @@
+body {
+    background: rgb(240, 241, 245);
+}
+
+.informations {
+    margin-top: 24px;
+    padding-left: 16px;
+}
+
+.city {
+    color: rgb(104, 110, 123);
+    font-weight: 350;
+}
+
+.place {
+    font-weight: 450;
+}
+table {
+    margin-top: 24px;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+#Info-Card-Deck {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
