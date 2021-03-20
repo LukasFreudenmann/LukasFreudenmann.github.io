@@ -5,7 +5,7 @@
     <title>Karlsruhe Fotospots</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/hero-banner.css">
     <link rel="stylesheet" href="css/image-gallery.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -15,7 +15,8 @@
 
 </head>
 <body onload="init()">
-<script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="js/location.js"></script>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" crossorigin=""></script>
@@ -23,7 +24,7 @@
 
 <div class="hero-image">
     <div class="hero-text">
-        <h5>Erkunde Fotospots in</h5>
+        <h3>Erkunde Fotospots in</h3>
         <h1 id="header-text">KARLSRUHE</h1>
     </div>
     <div class="header-buttons">
@@ -37,7 +38,7 @@
                 </td>
                 <td>
                     <a href="map.html">
-                        <button class="header-button"><i class="fas fa-map-marked-alt"></i> MAPS</button>
+                        <button class="header-button"><i class="fas fa-map-marked-alt"></i>MAPS</button>
                     </a>
                 </td>
             </tr>
@@ -52,6 +53,9 @@
 </div>
 <script>
     var map = L.map('map')
+    map.setView([49.010411077243255, 8.404078895912157], 13);
+    addMarkers()
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(onPos, showPosError);
     }
@@ -61,13 +65,11 @@
     function onPos(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        map.setView(new L.LatLng(latitude, longitude), 12);
+        map.setView([latitude, longitude], 12);
         addMarkers()
     }
 
     function showPosError(error) {
-        map.setView([49.010411077243255, 8.404078895912157], 13);
-        addMarkers()
     }
 
     function addMarkers() {
