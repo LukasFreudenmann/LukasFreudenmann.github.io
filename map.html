@@ -52,6 +52,8 @@
     <div id="map"></div>
 </div>
 <script>
+    let links = ["content_pages/Marktplatz.html", "", "", "", "", "", "", "", ""]
+
     var map = L.map('map')
     map.setView([49.010411077243255, 8.404078895912157], 13);
     addMarkers()
@@ -92,8 +94,14 @@
         }).addTo(map);
 
         for (let i = 0; i < distances.length; i++) {
-            L.marker([positions[i * 2], positions[i * 2 + 1]]).addTo(map).bindTooltip(distances[i].replace("Dist", ""))
+            L.marker([positions[i * 2], positions[i * 2 + 1]]).on('click', function(e) {
+                window.location.href = links[i];
+            }).addTo(map).bindTooltip(distances[i].replace("Dist", ""));
         }
+    }
+
+    function onClick(e) {
+        window.location.href = links[0];
     }
 
 </script>
