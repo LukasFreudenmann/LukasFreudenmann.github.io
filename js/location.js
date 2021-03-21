@@ -18,7 +18,7 @@ let elements = ["elem1", "elem2", "elem3", "elem4", "elem5", "elem6", "elem7", "
 function init() {
     getLocation();
     let ShakeEvent = new Shake({
-        threshold: 15, // optional shake strength threshold
+        threshold: 10, // optional shake strength threshold
         timeout: 1000 // optional, determines the frequency of event generation
     });
 
@@ -30,9 +30,10 @@ function init() {
 
     //function to call when shake occurs
     function shakeEventDidOccur() {
+        let links = ["content_pages/marktplatz/Marktplatz.html", "content_pages/bontanischerGarten/BotanischerGarten.html", "content_pages/rheinhafen/Rheinhafen.html", "content_pages/schloss/Schloss.html"]
 
-        //put your own code here etc.
-        alert('shake!');
+        alert('Ein zufälliger Fotospot wurde für dich ausgewählt!');
+        window.location.href = links[Math.floor((Math.random() * links.length))];
     }
 }
 
