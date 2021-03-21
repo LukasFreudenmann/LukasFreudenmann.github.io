@@ -77,7 +77,7 @@ h1 {
     transition: 0.2s;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
     #spot1 {
         display: none;
     }
@@ -92,7 +92,7 @@ h1 {
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 950px) {
     #spot1 {
         display: inline;
     }
