@@ -30,7 +30,7 @@ function init() {
 
     //function to call when shake occurs
     function shakeEventDidOccur() {
-        let links = ["content_pages/marktplatz/Marktplatz.html", "content_pages/bontanischerGarten/BotanischerGarten.html", "content_pages/rheinhafen/Rheinhafen.html", "content_pages/schloss/Schloss.html"]
+        let links = ["content_pages/marktplatz/Marktplatz.html", "content_pages/botanischerGarten/BotanischerGarten.html", "content_pages/rheinhafen/Rheinhafen.html", "content_pages/schloss/Schloss.html"]
 
         alert('Ein zufälliger Fotospot wurde für dich ausgewählt!');
         window.location.href = links[Math.floor((Math.random() * links.length))];
