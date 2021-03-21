@@ -76,3 +76,33 @@ h1 {
 #header-text2 {
     transition: 0.2s;
 }
+
+@media only screen and (max-width: 800px) {
+    #spot1 {
+        display: none;
+    }
+    #spot2 {
+        display: inline;
+    }
+    #map1 {
+        display: none;
+    }
+    #map2 {
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #spot1 {
+        display: inline;
+    }
+    #spot2 {
+        display: none;
+    }
+    #map1 {
+        display: inline;
+    }
+    #map2 {
+        display: none;
+    }
+}
