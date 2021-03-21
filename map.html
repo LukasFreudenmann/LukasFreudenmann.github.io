@@ -52,7 +52,7 @@
     <div id="map"></div>
 </div>
 <script>
-    let links = ["content_pages/Marktplatz.html", "", "", "", "", "", "", "", ""]
+    let links = ["content_pages/marktplatz/Marktplatz.html", "content_pages/bontanischerGarten/BotanischerGarten.html", "content_pages/rheinhafen/Rheinhafen.html", "", "", "", "", "content_pages/schloss/Schloss.html", ""]
 
     var map = L.map('map')
     map.setView([49.010411077243255, 8.404078895912157], 13);
@@ -103,7 +103,7 @@
         L.marker([latitude, longitude], {icon: greenIcon}).addTo(map).bindTooltip("You");
 
         for (let i = 0; i < distances.length; i++) {
-            L.marker([positions[i * 2], positions[i * 2 + 1]]).on('click', function(e) {
+            L.marker([positions[i * 2], positions[i * 2 + 1]]).on('click', function (e) {
                 window.location.href = links[i];
             }).addTo(map).bindTooltip(distances[i].replace("Dist", ""));
         }
