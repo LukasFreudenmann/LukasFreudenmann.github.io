@@ -17,6 +17,23 @@ let elements = ["elem1", "elem2", "elem3", "elem4", "elem5", "elem6", "elem7", "
 
 function init() {
     getLocation();
+    let ShakeEvent = new Shake({
+        threshold: 15, // optional shake strength threshold
+        timeout: 1000 // optional, determines the frequency of event generation
+    });
+
+    // Start listening to device motion
+    ShakeEvent.start();
+
+    // Register a shake event listener on window with your callback
+    window.addEventListener('shake', shakeEventDidOccur, false);
+
+    //function to call when shake occurs
+    function shakeEventDidOccur() {
+
+        //put your own code here etc.
+        alert('shake!');
+    }
 }
 
 
