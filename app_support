@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #666;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>App Support</h1>
+        
+        <h2>Häufig gestellte Fragen</h2>
+        <ul>
+            <li><span class="question">Wer entwickelt die App?</span></li>
+            <p>Die App wird komplett von mir alleine entwickelt, aktualisiert und gewartet.</p>
+            <li><span class="question">Sind meine Daten sicher?</span></li>
+            <p>Ja, deine Daten werden nur lokal auf deinem Endgerät gespeichert und verarbeitet.</p>
+            <li><span class="question">Kannst du noch Feature XY hinzufügen?</span></li>
+            <p>Sicher! Ich freue mich über deine Ideen und Anregungen. Bitte sende mir einfach eine E-Mail mit deinen Wünschen. Ich setze die meisten Ideen gerne um. Allerdings entwickle und warte ich die App alleine, daher kann es sein, dass ich nicht für alle Wünsche sofort Zeit habe.</p>
+            <li><span class="question">Gibt, oder wird es eine Funktion geben um sich mit Freunden zu vernetzen?</span></li>
+            <p>Nein, wird es nicht. Das würde gegen die Grundidee der App sprechen, die darauf ausgelegt ist, dass alle Daten auf dem Endgerät bleiben und nicht an eine Cloud geschickt werden.</p>
+        </ul>
+        
+        <h2>Kontakt</h2>
+        <p class="contact-info">Bei weiteren Fragen oder Problemen können Sie uns wie folgt erreichen:</p>
+        <p class="contact-info">Adresse: Reinhold-Frank-Straße 23, 76133 Karlsruhe</p>
+        <p class="contact-info">E-Mail: freudenmann.business@gmail.com</p>
+        <p class="contact-info">Telefon: +49 15721424512</p>
+    </div>
+</body>
+</html>
